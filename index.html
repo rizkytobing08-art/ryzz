@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryzz Home SMM - Premium Social Media Marketing Panel</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="auth-mode"> <div class="auth-container" id="authPage">
+    <div class="auth-card">
+      <div class="auth-header">
+        <i class="fa-solid fa-rocket brand-glow-icon"></i>
+        <h1>Ryzz Home SMM</h1>
+        <p>Masuk untuk mengelola dan optimasi sosial media Anda</p>
+      </div>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginUser"><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" id="loginUser" placeholder="Masukkan username" value="ryzzmember" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPass"><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" id="loginPass" placeholder="Masukkan password" value="password123" required>
+        </div>
+        <div class="auth-actions">
+          <label class="remember-me">
+            <input type="checkbox" checked> Ingat Saya
+          </label>
+          <a href="#" class="forgot-pass">Lupa Password?</a>
+        </div>
+        <button type="submit" class="btn-submit auth-btn">
+          Masuk Sekarang <i class="fa-solid fa-right-to-bracket"></i>
+        </button>
+      </form>
+      <div class="auth-footer">
+        <p>Belum punya akun? <a href="#">Daftar Sekarang</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout hidden" id="appArea">
+    
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <i class="fa-solid fa-rocket brand-icon"></i>
+        <h2>Ryzz Home</h2>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-link active" data-target="dashboard-section"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#" class="menu-link" data-target="order-section"><i class="fa-solid fa-cart-plus"></i> Pemesanan Baru</a>
+        <a href="#" class="menu-link" data-target="history-section"><i class="fa-solid fa-history"></i> Riwayat Pesanan</a>
+        <a href="#" class="menu-link" data-target="deposit-section"><i class="fa-solid fa-wallet"></i> Isi Saldo / Deposit</a>
+        <a href="#" class="menu-link" data-target="services-section"><i class="fa-solid fa-list"></i> Daftar Layanan</a>
+        <a href="#" class="menu-link" data-target="api-section"><i class="fa-solid fa-code"></i> Dokumentasi API</a>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <p>Masuk sebagai:</p>
+        <strong id="loggedUser">ryzzmember</strong>
+        <button class="btn-logout" id="logoutBtn">
+          <i class="fa-solid fa-right-from-bracket"></i> Keluar
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="top-navbar">
+        <div class="menu-toggle" id="menuToggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="navbar-right">
+          <div class="nav-stat balance-stat">
+            <i class="fa-solid fa-wallet"></i>
+            <span class="stat-label">Saldo:</span>
+            <span class="stat-value" id="userBalance">Rp 350.000</span>
+          </div>
+          <div class="nav-stat level-stat">
+            <i class="fa-solid fa-crown"></i>
+            <span class="stat-value">Platinum Member</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-container">
+        
+        <section id="dashboard-section" class="app-section active">
+          <div class="hero-banner">
+            <div class="hero-text">
+              <h1>Selamat Datang di Dashboard Ryzz Home!</h1>
+              <p>Kelola semua kebutuhan pengikut, suka, tayangan, dan interaksi media sosial Anda dengan proses instan otomatis 24/7.</p>
+            </div>
+            <div class="hero-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="icon-wrap blue"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div class="stat-info">
+                <h3 id="statTotalOrders">1,248</h3>
+                <p>Total Pesanan Anda</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="icon-wrap green"><i class="fa-solid fa-wallet"></i></div>
+              <div class="stat-info">
+                <h3>Rp 350.000</h3>
+                <p>Saldo Aktif</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="icon-wrap purple"><i class="fa-solid fa-star"></i></div>
+              <div class="stat-info">
+                <h3>Level Premium</h3>
+                <p>Status Member</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="news-feed">
+            <div class="panel-header">
+              <h2><i class="fa-solid fa-bullhorn text-accent"></i> Berita & Pembaruan Terkini</h2>
+            </div>
+            <div class="news-item">
+              <span class="news-date">14 Juli 2026</span>
+              <h4>⚡ Upgrade Server Layanan Instagram & TikTok!</h4>
+              <p>Layanan Instagram Likes dan TikTok Views kini diproses 5x lebih cepat dengan drop-rate mendekati 0%.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="order-section" class="app-section">
+          <div class="grid-layout">
+            <div class="order-panel">
+              <div class="panel-header">
+                <h2><i class="fa-solid fa-cart-plus"></i> Form Pemesanan</h2>
+              </div>
+              
+              <form id="orderForm">
+                <div class="form-group">
+                  <label for="category"><i class="fa-solid fa-layer-group"></i> Kategori</label>
+                  <select id="category" required>
+                    <option value="" disabled selected>-- Pilih Kategori --</option>
+                    <option value="instagram">INSTAGRAM SERVICES</option>
+                    <option value="tiktok">TIKTOK SERVICES</option>
+                    <option value="youtube">YOUTUBE SERVICES</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="serviceId"><i class="fa-solid fa-list-check"></i> Layanan</label>
+                  <select id="serviceId" required disabled>
+                    <option value="" disabled selected>Pilih Kategori Terlebih Dahulu</option>
+                  </select>
+                </div>
+
+                <div class="service-description-box">
+                  <div class="desc-title"><i class="fa-solid fa-info-circle"></i> Deskripsi Layanan</div>
+                  <p id="serviceDesc">Pilih layanan untuk memuat rincian informasi, kecepatan proses, serta garansi refill.</p>
+                  <div class="limits-info">
+                    <span>Minimal: <strong id="minLimit">-</strong></span>
+                    <span>Maksimal: <strong id="maxLimit">-</strong></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="target"><i class="fa-solid fa-link"></i> Target / URL Link</label>
+                  <input type="text" id="target" placeholder="Masukkan link profile / video target" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="quantity"><i class="fa-solid fa-sort-numeric-up"></i> Jumlah</label>
+                  <input type="number" id="quantity" placeholder="Masukkan jumlah pesanan" required>
+                </div>
+
+                <div class="calculation-container">
+                  <div class="calc-row">
+                    <span>Harga per 1.000:</span>
+                    <span id="ratePer1k">Rp 0</span>
+                  </div>
+                  <div class="calc-row total">
+                    <span>Total Biaya:</span>
+                    <span id="totalDisplay">Rp 0</span>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                  <i class="fa-solid fa-paper-plane"></i> Submit Pesanan
+                </button>
+              </form>
+              <div id="response-box"></div>
+            </div>
+
+            <div class="info-panel">
+              <div class="panel-header">
+                <h2><i class="fa-solid fa-circle-exclamation"></i> Petunjuk Pesanan</h2>
+              </div>
+              <div class="info-content">
+                <div class="info-step">
+                  <div class="step-num">1</div>
+                  <p>Pastikan akun target Anda <strong>TIDAK DI-PRIVATE</strong> agar sistem dapat mengirimkan interaksi.</p>
+                </div>
+                <div class="info-step">
+                  <div class="step-num">2</div>
+                  <p>Masukkan tautan target yang benar dan sesuai format yang tertera di rincian layanan.</p>
+                </div>
+                <div class="info-step">
+                  <div class="step-num">3</div>
+                  <p>Jangan memesan layanan yang sama secara bersamaan untuk satu link sebelum pesanan pertama selesai.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="history-section" class="app-section">
+          <div class="recent-orders">
+            <div class="panel-header">
+              <h2><i class="fa-solid fa-history"></i> Riwayat Pesanan</h2>
+            </div>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID Pesanan</th>
+                    <th>Nama Layanan</th>
+                    <th>Target Link</th>
+                    <th>Jumlah</th>
+                    <th>Biaya</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="historyBody">
+                  <tr>
+                    <td>#829103</td>
+                    <td>Instagram Likes [High Quality] (ID: 122)</td>
+                    <td>instagram.com/p/Co...</td>
+                    <td>1,000</td>
+                    <td>Rp 8.000</td>
+                    <td><span class="badge success">Selesai</span></td>
+                  </tr>
+                  <tr>
+                    <td>#829095</td>
+                    <td>TikTok Followers [No Drop] (ID: 133)</td>
+                    <td>tiktok.com/@user...</td>
+                    <td>500</td>
+                    <td>Rp 12.500</td>
+                    <td><span class="badge pending">Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="deposit-section" class="app-section">
+          <div class="grid-layout">
+            <div class="order-panel">
+              <div class="panel-header">
+                <h2><i class="fa-solid fa-wallet"></i> Form Isi Saldo (Deposit)</h2>
+              </div>
+              <form id="depositForm">
+                <div class="form-group">
+                  <label><i class="fa-solid fa-credit-card"></i> Metode Pembayaran</label>
+                  <select required>
+                    <option value="qris">QRIS (Otomatis & Instan)</option>
+                    <option value="bca">Bank BCA (Verifikasi Otomatis)</option>
+                    <option value="dana">DANA Transfer</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label><i class="fa-solid fa-money-bill-wave"></i> Jumlah Deposit (Min: Rp 10.000)</label>
+                  <input type="number" placeholder="Contoh: 50000" min="10000" required>
+                </div>
+                <button type="submit" class="btn-submit">
+                  <i class="fa-solid fa-arrow-right"></i> Lanjutkan Pembayaran
+                </button>
+              </form>
+            </div>
+            <div class="info-panel">
+              <div class="panel-header">
+                <h2><i class="fa-solid fa-shield-halved"></i> Keamanan Transaksi</h2>
+              </div>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                Semua metode pembayaran diproses secara real-time dan terenkripsi aman. Saldo Anda akan otomatis bertambah sesaat setelah sistem kami memverifikasi dana transfer yang masuk.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services-section" class="app-section">
+          <div class="recent-orders">
+            <div class="panel-header">
+              <h2><i class="fa-solid fa-list-check"></i> Seluruh Layanan Ryzz Home</h2>
+            </div>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nama Layanan</th>
+                    <th>Harga per 1k</th>
+                    <th>Minimal</th>
+                    <th>Maksimal</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>121</td>
+                    <td>Instagram Followers [Super Fast] - Bergaransi</td>
+                    <td>Rp 15.000</td>
+                    <td>100</td>
+                    <td>50,000</td>
+                  </tr>
+                  <tr>
+                    <td>122</td>
+                    <td>Instagram Likes [High Quality] - Real Akun</td>
+                    <td>Rp 8.000</td>
+                    <td>50</td>
+                    <td>20,000</td>
+                  </tr>
+                  <tr>
+                    <td>133</td>
+                    <td>TikTok Followers [No Drop] - Premium</td>
+                    <td>Rp 25.000</td>
+                    <td>100</td>
+                    <td>30,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="api-section" class="app-section">
+          <div class="recent-orders">
+            <div class="panel-header">
+              <h2><i class="fa-solid fa-code"></i> Dokumentasi REST API</h2>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 16px; font-size: 0.9rem;">Hubungkan sistem web atau aplikasi reseller Anda dengan API kami secara instan.</p>
+            <div class="calculation-container" style="font-family: monospace; font-size: 0.85rem; color: var(--accent);">
+              POST https://ryzzhome.com/api/v2 <br><br>
+              Payload Parameters:<br>
+              - key: API_KEY_ANDA<br>
+              - action: "add"<br>
+              - service: SERVICE_ID<br>
+              - target: TARGET_LINK<br>
+              - quantity: JUMLAH_ORDER
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+    </html>
